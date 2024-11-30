@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Booking</title>
+    <link rel="stylesheet" href="css/book.css">
+</head>
+<body>
+    <h2>Reservation</h2>
+    <form id="userForm">
+        <div class="user-entry">
+            <input type="text" id="name" placeholder="Name" required>
+            <input type="email" id="email" placeholder="Email" required>
+            <input type="text" id="phone" placeholder="Phone" required>
+            <div class="user-entry">
+                <input type="date" id="checkin" placeholder="Check-in Date" required>
+                <input type="date" id="checkout" placeholder="Check-out Date" required>
+                <select id="roomtype" required>
+                    <option value="" disabled selected>Room Type</option>
+                    <option value="Single">Single</option>
+                    <option value="Deluxe">Deluxe</option>
+                </select>
+            </div>
+        
+            <button type="button" onclick="createUser()">Add User</button>
+            <button type="button" onclick="updateUser()" style="display:none;">Update User</button>
+        </form>
+
+    <h2>Your Booking Data</h2>
+    <table id="userTable">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th>Check-in</th>
+                <th>Check-out</th>
+                <th>Room Type</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody id="userList"></tbody>
+    </table>
+
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', fetchUsers);
+    </script>
+</body>
+</html>
